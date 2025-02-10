@@ -1,0 +1,6 @@
+$font_directory: '../../public/fonts';
+
+@include font($font_directory, 'Kinetika', 'Kinetika-Medium', 300, 'normal');
+@include font($font_directory, 'Kinetika', 'Kinetika-Regular', 400, 'normal');
+@include font($font_directory, 'Kinetika', 'Kinetika-Bold', 500, 'normal');
+@include font($font_directory, 'Kinetika', 'Kinetika-Heavy', 700, 'normal');
