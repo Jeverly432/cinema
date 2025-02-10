@@ -1,0 +1,18 @@
+@import "./themes/_dark.scss";
+@import "./spec/_mixins";
+@import "./themes/_light.scss";
+@import "./spec/_reset";
+@import "./variables/_global.scss";
+@import "./spec/_fonts";
+
+
+.app {
+    font-family: var(--font-family-main);
+    font-weight: 400;
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    min-height: 100vh;
+    transition: 0.33s;
+}
+
+body {}
