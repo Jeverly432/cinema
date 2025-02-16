@@ -1,0 +1,13 @@
+.ThemeSwitcher {
+    svg {
+        g {
+            stroke: var(--secondary-color);
+            fill: var(--secondary-color); 
+        }
+
+        &:hover g {
+            stroke: var(--third-color);
+            fill: var(--third-color);
+        }
+    }
+}
