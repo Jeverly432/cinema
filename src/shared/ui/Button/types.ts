@@ -7,6 +7,7 @@ export enum ButtonTheme {
 }
 
 export enum ButtonSize {
+    M = "m",
     L = "l"
 }
 

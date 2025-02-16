@@ -1,10 +1,12 @@
 {
-  "language": "En",
+  "language": "Russian language",
   "location": "Moscow",
   "login": "Login",
   "nav-about-page": "About",
   "nav-page-catalog": "Catalog",
   "sidebar-toggle": "Toggle",
   "sidebar-toggle-open": "Open",
-  "sidebar-toggle-close": "Close"
+  "sidebar-toggle-close": "Close",
+  "theme-light": "Light theme",
+  "theme-dark": "Dark theme"
 }
