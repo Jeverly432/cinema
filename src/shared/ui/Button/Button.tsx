@@ -11,15 +11,14 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>((
         size = ButtonSize.L,
         ...otherProps
     },
-    ref
-) => {
-    return (
-        <button
-            ref={ref}
-            className={classNames(style.Button, {}, [className, style[theme], style[size]])}
-            {...otherProps}
-        >
-            {children}
-        </button>
-    )
-})
+    ref,
+) => (
+    <button
+        ref={ref}
+        className={classNames(style.Button, {}, [className, style[theme], style[size]])}
+        type="button"
+        {...otherProps}
+    >
+        {children}
+    </button>
+))

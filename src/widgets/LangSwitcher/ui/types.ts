@@ -1,5 +1,3 @@
-
-export interface LangSwitcherProps  {
+export interface LangSwitcherProps {
     className?: string
 }
-

@@ -1,9 +1,9 @@
-import "./styles/_index.scss"
-import { classNames } from "shared/lib/classNames"
-import { AppRouter } from "./providers/router"
-import { NavBar } from "widgets/NavBar"
-import { useTheme } from "./providers/ThemeProvider"
-import { Suspense, useEffect } from "react"
+import './styles/_index.scss'
+import { classNames } from 'shared/lib/classNames'
+import { NavBar } from 'widgets/NavBar'
+import { Suspense, useEffect } from 'react'
+import { AppRouter } from './providers/router'
+import { useTheme } from './providers/ThemeProvider'
 
 const App = () => {
     const { theme } = useTheme()

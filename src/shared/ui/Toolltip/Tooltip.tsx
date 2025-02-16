@@ -1,12 +1,14 @@
 import { classNames } from 'shared/lib/classNames'
-import style from './Tooltip.module.scss'
-import { cloneElement, createContext, forwardRef, HTMLProps, isValidElement, PropsWithChildren, useContext, useState, useEffect } from 'react';
+import {
+    cloneElement, createContext, forwardRef, HTMLProps, isValidElement, PropsWithChildren, useContext, useState, useEffect,
+} from 'react';
 import {
     useFloating,
     useMergeRefs,
     useHover,
     useInteractions,
 } from '@floating-ui/react'
+import style from './Tooltip.module.scss'
 
 export enum TooltipPlacement {
     Top = 'top',
@@ -34,7 +36,7 @@ export function useTooltip({
     initialOpen = false,
     placement = TooltipPlacement.BottomEnd,
     open: controlledOpen,
-    onOpenChange: setControlledOpen
+    onOpenChange: setControlledOpen,
 }: TooltipOptions) {
     const [uncontrolledOpen, setUncontrolledOpen] = useState(initialOpen)
     const open = controlledOpen ?? uncontrolledOpen
@@ -52,7 +54,7 @@ export function useTooltip({
     })
 
     const { getReferenceProps, getFloatingProps } = useInteractions([
-        hover
+        hover,
     ])
 
     return {
@@ -60,7 +62,7 @@ export function useTooltip({
         setOpen,
         getReferenceProps,
         getFloatingProps,
-        ...data
+        ...data,
     }
 }
 
@@ -84,9 +86,7 @@ export function Tooltip({ children, ...option }: PropsWithChildren<TooltipOption
 }
 
 Tooltip.Trigger = forwardRef<HTMLElement, HTMLProps<HTMLElement>>(
-    function TooltipTrigger(
-        { children, ...props }, propRef
-    ) {
+    ({ children, ...props }, propRef) => {
         const context = useTooltipContext()
         const childrenRef = (children as any).ref
         const ref = useMergeRefs([context.refs.setReference, propRef, childrenRef])
@@ -100,16 +100,16 @@ Tooltip.Trigger = forwardRef<HTMLElement, HTMLProps<HTMLElement>>(
             context.getReferenceProps({
                 ref,
                 ...props,
-                ...children.props
-            })
+                ...children.props,
+            }),
         )
-    }
+    },
 )
 
-Tooltip.Content = forwardRef<HTMLDivElement, HTMLProps<HTMLDivElement>>(function TooltipContent(
+Tooltip.Content = forwardRef<HTMLDivElement, HTMLProps<HTMLDivElement>>((
     { style: incomingStyle, className, ...props },
-    propRef
-) {
+    propRef,
+) => {
     const context = useTooltipContext()
     const ref = useMergeRefs([context.refs.setFloating, propRef])
 
@@ -122,7 +122,7 @@ Tooltip.Content = forwardRef<HTMLDivElement, HTMLProps<HTMLDivElement>>(function
                 position: context.strategy,
                 top: context.y ?? 0,
                 left: context.x ?? 0,
-                ...(incomingStyle || {})
+                ...(incomingStyle || {}),
             }}
             className={classNames(style.Tooltip, {}, [className])}
             {...context.getFloatingProps(props)}

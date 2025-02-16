@@ -1,34 +1,34 @@
-import { classNames } from "shared/lib/classNames"
-import style from "./NavBar.module.scss"
-import { NavBarProps } from "./types"
-import { AppLink } from "shared/ui/AppLink/AppLink"
-import { ThemeSwitcher } from "widgets/ThemeSwitcher"
-import Logo from "shared/assets/images/global/logo.png"
-import { Button } from "shared/ui/Button/Button"
-import { ButtonSize, ButtonTheme } from "shared/ui/Button/types"
-import { LangSwitcher } from "widgets/LangSwitcher"
-import { useTranslation } from "react-i18next"
-import Search from "shared/assets/icons/global/search.svg"
-import Notice from "shared/assets/icons/global/notice.svg"
-import Profile from "shared/assets/images/global/profile.png"
-import { Dropdown } from "shared/ui/Dropdown/Dropdown"
+import { classNames } from 'shared/lib/classNames';
+import { AppLink } from 'shared/ui/AppLink/AppLink';
+import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
+import Logo from 'shared/assets/images/global/logo.png';
+import { Button } from 'shared/ui/Button/Button';
+import { ButtonSize, ButtonTheme } from 'shared/ui/Button/types';
+import { LangSwitcher } from 'widgets/LangSwitcher';
+import { useTranslation } from 'react-i18next';
+import Search from 'shared/assets/icons/global/search.svg';
+import Notice from 'shared/assets/icons/global/notice.svg';
+import Profile from 'shared/assets/images/global/profile.png';
+import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
+import { NavBarProps } from './types';
+import style from './NavBar.module.scss';
 
 export const NavBar = ({ className }: NavBarProps) => {
-    const { t } = useTranslation()
+    const { t } = useTranslation();
 
     return (
         <header className={classNames(style.Navbar, {}, [className])}>
             <div className="container">
                 <div className={style.wrapper}>
-                    <AppLink to={"/"} className={style.logo}>
+                    <AppLink to="/" className={style.logo}>
                         <img src={Logo} alt="logo" />
                     </AppLink>
                     <div className={style.navigation}>
                         <nav className={classNames(style.nav, {}, [className])}>
-                            <AppLink to={"/about"} className={style.link}>
+                            <AppLink to="/about" className={style.link}>
                                 {t('nav-about-page')}
                             </AppLink>
-                            <AppLink to={"/about"} className={style.link}>
+                            <AppLink to="/about" className={style.link}>
                                 {t('nav-page-catalog')}
                             </AppLink>
                         </nav>
@@ -47,7 +47,7 @@ export const NavBar = ({ className }: NavBarProps) => {
                             <Dropdown.Content>
                                 <ul className={style.list}>
                                     <li>
-                                        <LangSwitcher className={style.lang}/>
+                                        <LangSwitcher className={style.lang} />
                                     </li>
                                     <li>
                                         <ThemeSwitcher className={style.theme} />
@@ -59,5 +59,5 @@ export const NavBar = ({ className }: NavBarProps) => {
                 </div>
             </div>
         </header>
-    )
-}
+    );
+};

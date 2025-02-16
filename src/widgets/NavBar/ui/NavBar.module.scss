@@ -75,9 +75,11 @@
 }
 
 .lang {
-    &:hover {
-        background-color: var(--black-shades-10);
-    }
+    text-transform: uppercase;
+    font-size: 14px;
 }
 
-.theme {}
+.theme {
+    text-transform: uppercase;
+    font-size: 14px;
+}

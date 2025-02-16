@@ -1,4 +1,4 @@
-import { LinkProps } from "react-router-dom";
+import { LinkProps } from 'react-router-dom';
 
 export enum AppLinkTheme {
     PRIMARY = 'primary',
@@ -9,4 +9,3 @@ export interface AppLinkProps extends LinkProps {
     className?: string,
     theme?: AppLinkTheme
 }
-
