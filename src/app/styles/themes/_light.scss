@@ -1,7 +1,42 @@
 .app.light {
-    --bg-color: #f5f6f8;      
-    --primary-color: #1f293d;
+    --bg-color: #FFFFFF;
+    --primary-color: #1F293D;
     --secondary-color: #FC6D19;
+    --main-color: #F7F7F8;
     --third-color: #FF8036;
-    backdrop-filter: blur(20px);
+    --text-color: #1A2232;
+
+    //Absolute Colors
+    --absolute-colors-white: #FFF;
+    --absolute-colors-black: #000;
+
+    //Red Shades
+    --red-shades-45: #E50000;
+    --red-shades-50: #FF0000;
+    --red-shades-55: #FF1919;
+    --red-shades-60: #FF3333;
+    --red-shades-80: #FF9999;
+    --red-shades-90: #FFCCCC;
+    --red-shades-95: #FFE5E5;
+    --red-shades-99: #FFFAFA;
+
+    //Black Shades
+    --black-shades-06: #F9F9F9;
+    --black-shades-08: #F5F5F5;
+    --black-shades-10: #F0F0F0;
+    --black-shades-12: #EBEBEB;
+    --black-shades-15: #E6E6E6;
+    --black-shades-20: #CCCCCC;
+    --black-shades-25: #B3B3B3;
+    --black-shades-30: #999999;
+
+    //Grey Shades
+    --grey-shades-60: #666666;
+    --grey-shades-65: #595959;
+    --grey-shades-70: #4D4D4D;
+    --grey-shades-75: #404040;
+    --grey-shades-90: #1A1A1A;
+    --grey-shades-95: #0D0D0D;
+    --grey-shades-97: #080808;
+    --grey-shades-99: #030303;
 }
