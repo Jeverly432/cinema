@@ -15,7 +15,7 @@ const App = () => {
             <Suspense fallback="">
                 <NavBar />
                 <div className="content-page">
-                    <Sidebar />
+                    {/* <Sidebar /> */}
                     <AppRouter />
                 </div>
             </Suspense>
