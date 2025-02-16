@@ -2,17 +2,18 @@ import { classNames } from 'shared/lib/classNames'
 import style from './ThemeSwitcher.module.scss'
 import { ThemeSwitcherProps } from './types'
 import { Theme, useTheme } from 'app/providers/ThemeProvider'
-import DarkIcon from "shared/assets/icons/dark.svg"
-import LightIcon from "shared/assets/icons/light.svg"
 import { Button } from 'shared/ui/Button/Button'
 import { ButtonSize, ButtonTheme } from 'shared/ui/Button/types'
+import { useTranslation } from 'react-i18next'
+import Sparks from "shared/assets/icons/global/sparkles.svg"
 
 export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
     const { theme, toggleTheme } = useTheme()
+    const { t } = useTranslation()
 
     return (
         <Button theme={ButtonTheme.CLEAR} size={ButtonSize.M} className={classNames(style.ThemeSwitcher, {}, [className])} onClick={toggleTheme}>
-            {theme === Theme.DARK ? <DarkIcon /> : <LightIcon />}
+            {/* <Sparks /> */} {theme === Theme.DARK ? t('theme-light') : t('theme-dark')}
         </Button>
     )
 }

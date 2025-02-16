@@ -4,6 +4,7 @@
     gap: 4px;
     border-radius: 8px;
     font-weight: 600;
+    user-select: none;
 }
 
 .primary {
@@ -24,7 +25,7 @@
     transition: 0.33s;
 
     &:hover {
-        color: var(--secondary-color);
+        color: var(--red-shades-50);
     }
 }
 

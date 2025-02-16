@@ -6,13 +6,12 @@ import { ThemeSwitcher } from "widgets/ThemeSwitcher"
 import Logo from "shared/assets/images/global/logo.png"
 import { Button } from "shared/ui/Button/Button"
 import { ButtonSize, ButtonTheme } from "shared/ui/Button/types"
-import Location from "shared/assets/icons/location.svg"
 import { LangSwitcher } from "widgets/LangSwitcher"
 import { useTranslation } from "react-i18next"
 import Search from "shared/assets/icons/global/search.svg"
 import Notice from "shared/assets/icons/global/notice.svg"
 import Profile from "shared/assets/images/global/profile.png"
-import { Tooltip, TooltipPlacement } from "shared/ui/Toolltip/Tooltip"
+import { Dropdown } from "shared/ui/Dropdown/Dropdown"
 
 export const NavBar = ({ className }: NavBarProps) => {
     const { t } = useTranslation()
@@ -33,24 +32,29 @@ export const NavBar = ({ className }: NavBarProps) => {
                                 {t('nav-page-catalog')}
                             </AppLink>
                         </nav>
-                        <LangSwitcher />
-                        <ThemeSwitcher className="" />
                         <Button theme={ButtonTheme.CLEAR} size={ButtonSize.M} className={style.search}>
                             <Search />
                         </Button>
                         <Button theme={ButtonTheme.CLEAR} size={ButtonSize.M} className={style.notice}>
                             <Notice />
                         </Button>
-                        <Tooltip placement={TooltipPlacement.BottomEnd}>
-                            <Tooltip.Trigger>
+                        <Dropdown>
+                            <Dropdown.Anchor>
                                 <Button theme={ButtonTheme.CLEAR} size={ButtonSize.M}>
                                     <img src={Profile} alt="profile" className={style.profile} />
                                 </Button>
-                            </Tooltip.Trigger>
-                            <Tooltip.Content>
-                                dawdawdwadaw
-                            </Tooltip.Content>
-                        </Tooltip>
+                            </Dropdown.Anchor>
+                            <Dropdown.Content>
+                                <ul className={style.list}>
+                                    <li>
+                                        <LangSwitcher className={style.lang}/>
+                                    </li>
+                                    <li>
+                                        <ThemeSwitcher className={style.theme} />
+                                    </li>
+                                </ul>
+                            </Dropdown.Content>
+                        </Dropdown>
                     </div>
                 </div>
             </div>

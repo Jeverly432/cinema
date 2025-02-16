@@ -3,9 +3,9 @@ import style from './LangSwitcher.module.scss'
 import { useTranslation } from 'react-i18next'
 import { Button } from 'shared/ui/Button/Button'
 import { ButtonSize, ButtonTheme } from 'shared/ui/Button/types'
-import Lang from "shared/assets/icons/language.svg"
+import { LangSwitcherProps } from './types'
 
-export const LangSwitcher = () => {
+export const LangSwitcher = ({ className }: LangSwitcherProps) => {
     const { t, i18n } = useTranslation()
 
     const toggle = () => {
@@ -13,8 +13,7 @@ export const LangSwitcher = () => {
     }
 
     return (
-        <Button theme={ButtonTheme.CLEAR} onClick={toggle} size={ButtonSize.M} className={classNames(style.LangSwitcher)}>
-            <Lang />
+        <Button theme={ButtonTheme.CLEAR} onClick={toggle} size={ButtonSize.M} className={classNames(style.LangSwitcher, {}, [className])}>
             {t('language')}
         </Button>
     )

@@ -1,9 +1,11 @@
 {
-  "language": "Ру",
+  "language": "Английская язык",
   "location": "Москва",
   "login": "Логин",
   "nav-about-page": "О нас",
   "nav-page-catalog": "Каталог",
   "sidebar-toggle-open": "Развернуть",
-  "sidebar-toggle-close": "Свернуть"
+  "sidebar-toggle-close": "Свернуть",
+  "theme-light": "Светлая тема",
+  "theme-dark": "Темная тема"
 }
