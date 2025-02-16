@@ -1,6 +1,6 @@
-$font_directory: '../../../public/fonts';
+$font_directory: '../../shared/assets/fonts';
 
-@include font($font_directory, 'Kinetika', 'Kinetika-Medium', 300, 'normal');
-@include font($font_directory, 'Kinetika', 'Kinetika-Regular', 400, 'normal');
-@include font($font_directory, 'Kinetika', 'Kinetika-Bold', 500, 'normal');
-@include font($font_directory, 'Kinetika', 'Kinetika-Heavy', 700, 'normal');
+@include font($font_directory, 'Manrope', 'Manrope-Medium', 300, 'normal');
+@include font($font_directory, 'Manrope', 'Manrope-Regular', 400, 'normal');
+@include font($font_directory, 'Manrope', 'Manrope-Bold', 500, 'normal');
+@include font($font_directory, 'Manrope', 'Manrope-SemiBold', 700, 'normal');
