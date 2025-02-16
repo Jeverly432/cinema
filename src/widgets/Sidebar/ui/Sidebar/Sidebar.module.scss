@@ -1,0 +1,12 @@
+.Sidebar {
+    height: calc(100vh - var(--navbar-height));
+    width: var(--sidebar-width);
+    background-color: var(--bg-color);
+    position: relative;
+    transition: width 0.4s cubic-bezier(0.14, 0.33, 0.67, -0.06), background-color 0.33s;
+    padding: 12px 30px;
+}
+
+.collapsed {
+    width: var(--sidebar-width-collapsed);
+}
