@@ -11,7 +11,7 @@
     background: var(--red-shades-45);
     color: var(--absolute-colors-white);
     transition: 0.33s;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
 
     &:hover {
         background-color: var(--red-shades-55);

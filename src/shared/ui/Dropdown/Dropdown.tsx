@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import React, { PropsWithChildren } from 'react';
 import {
@@ -15,8 +15,8 @@ import {
     offset,
     Placement,
 } from '@floating-ui/react';
-import style from './Dropdown.module.scss';
 import { classNames } from 'shared/lib/classNames';
+import style from './Dropdown.module.scss';
 
 interface DropdownOptions {
     initialOpen?: boolean;
@@ -25,6 +25,7 @@ interface DropdownOptions {
     onOpenChange?: (open: boolean) => void;
     className?: string;
     clickEnabled?: boolean;
+    style?: React.CSSProperties;
 }
 
 export function useDropdown({
@@ -46,7 +47,7 @@ export function useDropdown({
         middleware: [offset(5), flip(), shift({ padding: 5 })],
     });
 
-    const context = data.context;
+    const { context } = data;
     const click = useClick(context, { enabled: clickEnabled, event: 'mousedown' });
     const role = useRole(context, { role: 'listbox' });
     const dismiss = useDismiss(context);
@@ -59,7 +60,7 @@ export function useDropdown({
             ...interactions,
             ...data,
         }),
-        [open, setOpen, interactions, data]
+        [open, setOpen, interactions, data],
     );
 }
 
@@ -82,10 +83,10 @@ export function Dropdown({ children, ...options }: PropsWithChildren<DropdownOpt
     return <DropdownContext.Provider value={dropdown}>{children}</DropdownContext.Provider>;
 }
 
-Dropdown.Anchor = React.forwardRef<HTMLElement, React.HTMLProps<HTMLElement>>(function DropdownTrigger(
+Dropdown.Anchor = React.forwardRef<HTMLElement, React.HTMLProps<HTMLElement>>((
     { children, ...props },
-    propRef
-) {
+    propRef,
+) => {
     const context = useDropdownContext();
     const childrenRef = (children as any).ref;
     const ref = useMergeRefs([context.refs.setReference, propRef, childrenRef]);
@@ -99,15 +100,18 @@ Dropdown.Anchor = React.forwardRef<HTMLElement, React.HTMLProps<HTMLElement>>(fu
             ...props,
             ...children.props,
             'data-state': context.open ? 'open' : 'closed',
-        })
+        }),
     );
 });
 
-Dropdown.Content = React.forwardRef<HTMLDivElement, React.HTMLProps<HTMLDivElement>>(function DropdownContent(
+Dropdown.Content = React.forwardRef<HTMLDivElement, React.HTMLProps<HTMLDivElement>>((
+    // eslint-disable-next-line react/prop-types
     { style: incomingStyle, className, ...props },
-    propRef
-) {
-    const { open, context, getFloatingProps, floatingStyles } = useDropdownContext();
+    propRef,
+) => {
+    const {
+        open, context, getFloatingProps, floatingStyles,
+    } = useDropdownContext();
     const ref = useMergeRefs([context.refs.setFloating, propRef]);
 
     if (!open) return null;
@@ -120,7 +124,7 @@ Dropdown.Content = React.forwardRef<HTMLDivElement, React.HTMLProps<HTMLDivEleme
                     ...floatingStyles,
                     ...(incomingStyle || {}),
                 }}
-                role="dropdown"
+                role="menu"
                 className={classNames(style.Dropdown, {}, [className])}
             >
                 <div {...getFloatingProps(props)} />

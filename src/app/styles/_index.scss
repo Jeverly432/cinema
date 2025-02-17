@@ -1,9 +1,9 @@
-@import "./themes/_dark.scss";
-@import "./spec/_mixins";
-@import "./themes/_light.scss";
-@import "./spec/_reset";
-@import "./variables/_global.scss";
-@import "./spec/_fonts";
+@import "./themes/dark";
+@import "./spec/mixins";
+@import "./themes/light";
+@import "./spec/reset";
+@import "./variables/global";
+@import "./spec/fonts";
 @import "./spec/container";
 
 .app {
@@ -13,10 +13,6 @@
     color: var(--primary-color);
     min-height: 100vh;
     transition: background-color 0.33s;
-}
-
-.content-page {
-   
 }
 
 .content-inner {

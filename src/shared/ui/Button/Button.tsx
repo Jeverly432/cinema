@@ -1,7 +1,7 @@
-import { forwardRef } from 'react'
-import { classNames } from 'shared/lib/classNames'
-import style from './Button.module.scss'
-import { ButtonProps, ButtonSize, ButtonTheme } from './types'
+import { forwardRef } from 'react';
+import { classNames } from 'shared/lib/classNames';
+import style from './Button.module.scss';
+import { ButtonProps, ButtonSize, ButtonTheme } from './types';
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>((
     {
@@ -11,15 +11,14 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>((
         size = ButtonSize.L,
         ...otherProps
     },
-    ref
-) => {
-    return (
-        <button
-            ref={ref}
-            className={classNames(style.Button, {}, [className, style[theme], style[size]])}
-            {...otherProps}
-        >
-            {children}
-        </button>
-    )
-})
+    ref,
+) => (
+    <button
+        ref={ref}
+        className={classNames(style.Button, {}, [className, style[theme], style[size]])}
+        type="button"
+        {...otherProps}
+    >
+        {children}
+    </button>
+));
