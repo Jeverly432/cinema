@@ -1,10 +1,10 @@
-import { classNames } from 'shared/lib/classNames'
-import { useTranslation } from 'react-i18next'
-import style from './Categories.module.scss'
-import { CategoriesProps } from './types'
+import { classNames } from 'shared/lib/classNames';
+import { useTranslation } from 'react-i18next';
+import style from './Categories.module.scss';
+import { CategoriesProps } from './types';
 
 export const Categories = ({ className }: CategoriesProps) => {
-    const { t } = useTranslation('main')
+    const { t } = useTranslation('main');
 
     return (
         <div className={classNames(style.Categories, {}, [className])}>
@@ -19,5 +19,5 @@ export const Categories = ({ className }: CategoriesProps) => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};

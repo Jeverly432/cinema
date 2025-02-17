@@ -10,5 +10,5 @@ export function buildResolvers(options: BuildOptions): ResolveOptions {
         alias: {
             'react/jsx-runtime': require.resolve('react/jsx-runtime'),
         },
-    }
+    };
 }

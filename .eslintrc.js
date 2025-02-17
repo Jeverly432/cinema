@@ -3,7 +3,10 @@ module.exports = {
         browser: true,
         es2021: true,
     },
-    extends: ['plugin:react/recommended', 'airbnb', 'prettier','plugin:i18next/recommended'],
+    extends: [
+        'plugin:react/recommended',
+        'airbnb',
+    ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaFeatures: {
@@ -12,7 +15,10 @@ module.exports = {
         ecmaVersion: 'latest',
         sourceType: 'module',
     },
-    plugins: ['react', '@typescript-eslint','i18next'],
+    plugins: [
+        'react',
+        '@typescript-eslint',
+    ],
     rules: {
         'linebreak-style': [
             'error',
@@ -21,10 +27,7 @@ module.exports = {
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
         indent: [2, 4],
-        'react/jsx-filename-extension': [
-            2,
-            { extensions: ['.js', '.jsx', '.tsx'] },
-        ],
+        'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx'] }],
         'import/no-unresolved': 'off',
         'import/prefer-default-export': 'off',
         'no-unused-vars': 'warn',
@@ -37,24 +40,9 @@ module.exports = {
         'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'off',
         'max-len': ['error', { code: 300 }],
-        semi: 'off',
-        'react/prop-types': 'off',
-        'react/jsx-uses-vars': 'error',
-        'react/jsx-uses-react': 'error',
-        'eol-last': 'off',
-        'no-missing-end-of-source-newline': 'off',
-        'i18next/no-literal-string': ['error', {markupOnly: true}]
+        semi: ['error', 'never'],
     },
     globals: {
         __IS_DEV__: true,
     },
-    overrides: [
-        {
-            files: ['*.scss'],
-            rules: {
-                'indent': 'off',
-                'no-unused-vars': 'off',
-            },
-        },
-    ],
-}
+};

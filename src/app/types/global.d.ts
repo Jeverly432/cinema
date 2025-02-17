@@ -1,10 +1,8 @@
-import React from 'react'
-
 declare module '*.scss' {
     interface IClassNames {
         [className: string]: string
     }
-    const classNames: IClassNames
+    const classNames: IClassNames;
     export = classNames
 }
 
@@ -14,8 +12,11 @@ declare module '*.jpg'
 declare module '*.webp'
 
 declare module '*.svg' {
-    const content: React.FunctionComponent<React.SVGAttributes<SVGElement>>;
-    export default content;
-}
+    import React from 'react';
+    import { SvgProps } from 'react-native-svg';
 
-declare const __IS_DEV__: boolean
+    const content: React.FC<SvgProps>;
+    export default content;
+  }
+
+declare const __IS_DEV__: boolean;

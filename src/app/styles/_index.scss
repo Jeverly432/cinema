@@ -1,10 +1,10 @@
-@import './themes/dark';
-@import './spec/mixins';
-@import './themes/light';
-@import './spec/reset';
-@import './variables/global';
-@import './spec/fonts';
-@import './spec/container';
+@import "./themes/dark";
+@import "./spec/mixins";
+@import "./themes/light";
+@import "./spec/reset";
+@import "./variables/global";
+@import "./spec/fonts";
+@import "./spec/container";
 
 .app {
     font-family: var(--font-family-main);

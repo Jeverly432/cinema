@@ -1,12 +1,12 @@
-import './styles/_index.scss'
-import { classNames } from 'shared/lib/classNames'
-import { NavBar } from 'widgets/NavBar'
-import { Suspense, useEffect } from 'react'
-import { AppRouter } from './providers/router'
-import { useTheme } from './providers/ThemeProvider'
+import './styles/_index.scss';
+import { classNames } from 'shared/lib/classNames';
+import { NavBar } from 'widgets/NavBar';
+import { Suspense, useEffect } from 'react';
+import { AppRouter } from './providers/router';
+import { useTheme } from './providers/ThemeProvider';
 
 const App = () => {
-    const { theme } = useTheme()
+    const { theme } = useTheme();
 
     useEffect(() => {
         document.documentElement.classList.remove('light', 'dark');
@@ -22,7 +22,7 @@ const App = () => {
                 </div>
             </Suspense>
         </div>
-    )
-}
+    );
+};
 
-export default App
+export default App;

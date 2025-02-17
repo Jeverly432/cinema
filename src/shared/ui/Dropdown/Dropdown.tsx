@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import React, { PropsWithChildren } from 'react';
 import {
@@ -105,6 +105,7 @@ Dropdown.Anchor = React.forwardRef<HTMLElement, React.HTMLProps<HTMLElement>>((
 });
 
 Dropdown.Content = React.forwardRef<HTMLDivElement, React.HTMLProps<HTMLDivElement>>((
+    // eslint-disable-next-line react/prop-types
     { style: incomingStyle, className, ...props },
     propRef,
 ) => {

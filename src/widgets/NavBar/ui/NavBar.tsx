@@ -18,6 +18,7 @@ export const NavBar = ({ className }: NavBarProps) => {
 
     return (
         <header className={classNames(style.Navbar, {}, [className])}>
+
             <div className="container">
                 <div className={style.wrapper}>
                     <AppLink to="/" className={style.logo}>
