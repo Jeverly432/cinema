@@ -21,7 +21,7 @@ module.exports = {
     ],
     rules: {
         'linebreak-style': [
-            'error',
+            'waring',
             process.platform === 'win32' ? 'windows' : 'unix',
         ],
         'react/jsx-indent': [2, 4],
