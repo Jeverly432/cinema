@@ -8,5 +8,6 @@
   "sidebar-toggle-open": "Open",
   "sidebar-toggle-close": "Close",
   "theme-light": "Light theme",
-  "theme-dark": "Dark theme"
+  "theme-dark": "Dark theme",
+  "not-found": "Page not found"
 }
