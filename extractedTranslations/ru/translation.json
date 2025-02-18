@@ -1,4 +1,5 @@
 {
+  "": "",
   "banner-button": "banner-button",
   "banner-desc": "banner-desc",
   "banner-h1": "banner-h1",
@@ -7,6 +8,10 @@
   "language": "language",
   "nav-about-page": "nav-about-page",
   "nav-page-catalog": "nav-page-catalog",
+  "not-found": "not-found",
+  "page-error": "page-error",
+  "page-error-reload": "page-error-reload",
+  "page-error-reload-button": "page-error-reload-button",
   "theme-dark": "theme-dark",
   "theme-light": "theme-light"
 }
