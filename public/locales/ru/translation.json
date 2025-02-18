@@ -8,5 +8,7 @@
   "sidebar-toggle-close": "Свернуть",
   "theme-light": "Светлая тема",
   "theme-dark": "Темная тема",
-  "not-found": "Страница не найдена"
+  "not-found": "Страница не найдена",
+  "page-error": "Произошла непредвиденная ошибка",
+  "page-error-reload-button": "Обновить страницу"
 }
