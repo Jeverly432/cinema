@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/classNames';
+import { classNames } from 'shared/lib/classNames/classNames';
 import {
     cloneElement, createContext, forwardRef, HTMLProps, isValidElement, PropsWithChildren, useContext, useState, useEffect,
 } from 'react';

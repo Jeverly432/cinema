@@ -40,9 +40,10 @@ export default {
         '<rootDir>src',
     ],
     rootDir: '../../',
-    setupFilesAfterEnv: ['<rootDir>config/jest/setup-tests.ts'],
+    setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
     moduleNameMapper: {
-        '\\.s?css$': 'identity-obj-proxy',
+        '\\.s?css$': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+        '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
         '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
     },
     // Indicates whether the coverage information should be collected while executing the test

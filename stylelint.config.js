@@ -5,4 +5,4 @@ module.exports = {
         indentation: 4,
         'selector-class-pattern': null,
     },
-}
+};

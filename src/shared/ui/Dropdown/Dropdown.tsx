@@ -15,7 +15,7 @@ import {
     offset,
     Placement,
 } from '@floating-ui/react';
-import { classNames } from 'shared/lib/classNames';
+import { classNames } from 'shared/lib/classNames/classNames';
 import style from './Dropdown.module.scss';
 
 interface DropdownOptions {
