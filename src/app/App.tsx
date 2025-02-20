@@ -1,5 +1,5 @@
 import './styles/_index.scss';
-import { classNames } from 'shared/lib/classNames';
+import { classNames } from 'shared/lib/classNames/classNames';
 import { NavBar } from 'widgets/NavBar';
 import { Suspense, useEffect } from 'react';
 import { AppRouter } from './providers/router';

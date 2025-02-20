@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/classNames';
+import { classNames } from 'shared/lib/classNames/classNames';
 import { Theme, useTheme } from 'app/providers/ThemeProvider';
 import { Button } from 'shared/ui/Button/Button';
 import { ButtonSize, ButtonTheme } from 'shared/ui/Button/types';

@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/classNames';
+import { classNames } from 'shared/lib/classNames/classNames';
 import Background from 'shared/assets/images/main/banner-2.webp';
 import { Button } from 'shared/ui/Button/Button';
 import Play from 'shared/assets/icons/main/play.svg';

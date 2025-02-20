@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/classNames';
+import { classNames } from 'shared/lib/classNames/classNames';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import Logo from 'shared/assets/images/global/logo.png';
@@ -21,7 +21,7 @@ export const NavBar = ({ className }: NavBarProps) => {
             <div className="container">
                 <div className={style.wrapper}>
                     <AppLink to="/" className={style.logo}>
-                        <img src={Logo} alt="logo" />
+                        <Logo />
                     </AppLink>
                     <div className={style.navigation}>
                         <nav className={classNames(style.nav, {}, [className])}>
@@ -48,12 +48,16 @@ export const NavBar = ({ className }: NavBarProps) => {
                         </Button>
                         <Dropdown>
                             <Dropdown.Anchor>
-                                <Button theme={ButtonTheme.CLEAR} size={ButtonSize.M}>
-                                    <img src={Profile} alt="profile" className={style.profile} />
+                                <Button
+                                    theme={ButtonTheme.CLEAR}
+                                    size={ButtonSize.M}
+                                    data-testid="dropdown-toggle"
+                                >
+                                    <Profile />
                                 </Button>
                             </Dropdown.Anchor>
                             <Dropdown.Content>
-                                <ul className={style.list}>
+                                <ul className={style.list} data-testid="dropdown-list">
                                     <li>
                                         <LangSwitcher className={style.lang} />
                                     </li>
