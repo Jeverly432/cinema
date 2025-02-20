@@ -1,4 +1,5 @@
 /* eslint-disable linebreak-style */
+import path from 'path';
 
 /*
  * For a detailed explanation regarding each configuration property and type check, visit:
@@ -35,7 +36,15 @@ export default {
     testMatch: [
         '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
     ],
+    modulePaths: [
+        '<rootDir>src',
+    ],
     rootDir: '../../',
+    setupFilesAfterEnv: ['<rootDir>config/jest/setup-tests.ts'],
+    moduleNameMapper: {
+        '\\.s?css$': 'identity-obj-proxy',
+        '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+    },
     // Indicates whether the coverage information should be collected while executing the test
     // collectCoverage: false,
 
