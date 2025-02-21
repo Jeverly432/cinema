@@ -23,6 +23,7 @@
     background-color: unset;
     color: var(--absolute-colors-white);
     transition: 0.33s;
+    border: 0;
 
     &:hover {
         color: var(--red-shades-50);

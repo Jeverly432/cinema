@@ -1,5 +1,5 @@
 /* eslint-disable linebreak-style */
-import path from 'path';
+import path from "path";
 
 /*
  * For a detailed explanation regarding each configuration property and type check, visit:
@@ -18,33 +18,33 @@ export default {
 
     // Automatically clear mock calls, instances and results before every test
     clearMocks: true,
-    testEnvironment: 'jsdom',
+    testEnvironment: "jsdom",
     coveragePathIgnorePatterns: [
-        '\\\\node_modules\\\\',
+        "\\\\node_modules\\\\",
     ],
     moduleFileExtensions: [
-        'js',
-        'jsx',
-        'ts',
-        'tsx',
-        'json',
-        'node',
+        "js",
+        "jsx",
+        "ts",
+        "tsx",
+        "json",
+        "node",
     ],
     moduleDirectories: [
-        'node_modules',
+        "node_modules",
     ],
     testMatch: [
-        '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
+        "<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)",
     ],
     modulePaths: [
-        '<rootDir>src',
+        "<rootDir>src",
     ],
-    rootDir: '../../',
-    setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
+    rootDir: "../../",
+    setupFilesAfterEnv: ["<rootDir>config/jest/setupTests.ts"],
     moduleNameMapper: {
-        '\\.s?css$': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
-        '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
-        '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+        "\\.s?css$": path.resolve(__dirname, "jestEmptyComponent.tsx"),
+        "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": path.resolve(__dirname, "jestEmptyComponent.tsx"),
+        "\\.svg": path.resolve(__dirname, "jestEmptyComponent.tsx"),
     },
     // Indicates whether the coverage information should be collected while executing the test
     // collectCoverage: false,
