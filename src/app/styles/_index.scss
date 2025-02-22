@@ -5,6 +5,7 @@
 @import "./variables/global";
 @import "./spec/fonts";
 @import "./spec/container";
+@import "./spec/loader";
 
 .app {
     font-family: var(--font-family-main);

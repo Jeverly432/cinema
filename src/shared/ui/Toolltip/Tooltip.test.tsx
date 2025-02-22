@@ -1,8 +1,10 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import {
+    fireEvent, render, screen, waitFor,
+} from "@testing-library/react";
 import { Tooltip } from "./Tooltip";
 
 describe("Tooltip", () => {
-    test("renders tooltip content on hover", () => {
+    test("renders tooltip content on hover", async () => {
         render(
             <Tooltip>
                 <Tooltip.Trigger>
@@ -15,5 +17,11 @@ describe("Tooltip", () => {
         );
 
         expect(screen.queryByText("Content")).not.toBeInTheDocument();
+
+        fireEvent.mouseEnter(screen.getByText("Tooltip"));
+
+        await waitFor(() => {
+            expect(screen.getByText("Content")).toBeInTheDocument();
+        });
     });
 });

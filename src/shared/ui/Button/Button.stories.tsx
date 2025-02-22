@@ -1,6 +1,5 @@
-import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { fn } from "@storybook/test";
+import { DarkThemeDecorator } from "shared/config/storybook/DarkThemeDecorator";
 import { Button } from "./Button";
 import { ButtonTheme } from "./types";
 
@@ -10,8 +9,6 @@ const meta = {
     parameters: {
         layout: "centered",
     },
-    tags: ["autodocs"],
-    args: { onClick: fn() },
 } satisfies Meta<typeof Button>;
 
 export default meta;
@@ -23,6 +20,9 @@ export const Primary: Story = {
         theme: ButtonTheme.PRIMARY,
         children: "Text",
     },
+    decorators: [
+        DarkThemeDecorator,
+    ],
 };
 
 export const Secondary: Story = {
@@ -30,6 +30,9 @@ export const Secondary: Story = {
         theme: ButtonTheme.SECONDARY,
         children: "Text",
     },
+    decorators: [
+        DarkThemeDecorator,
+    ],
 };
 
 export const Clear: Story = {
@@ -37,4 +40,7 @@ export const Clear: Story = {
         theme: ButtonTheme.CLEAR,
         children: "Text",
     },
+    decorators: [
+        DarkThemeDecorator,
+    ],
 };
