@@ -7,6 +7,7 @@ export const DarkThemeDecorator = (Story: ComponentType) => {
     useEffect(() => {
         document.documentElement.classList.remove(Theme.LIGHT);
         document.documentElement.classList.add(Theme.DARK);
+        document.body.classList.add("body-centered");
     }, [theme]);
 
     return (

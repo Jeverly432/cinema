@@ -2,18 +2,18 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { LightThemeDecorator } from "shared/config/storybook/LightThemeDecorator";
 import { DarkThemeDecorator } from "shared/config/storybook/DarkThemeDecorator";
 import { Button } from "shared/ui/Button/Button";
-import { Dropdown } from "./Dropdown";
 import { ButtonTheme } from "../Button/types";
 import { List } from "../List/List";
 import { ListItem } from "../ListItem/ListItem";
+import { Tooltip } from "./Tooltip";
 
 const meta = {
-    title: "shared/Dropdown",
-    component: Dropdown,
+    title: "shared/Tooltip",
+    component: Tooltip,
     parameters: {
         layout: "centered",
     },
-} satisfies Meta<typeof Dropdown>;
+} satisfies Meta<typeof Tooltip>;
 
 export default meta;
 
@@ -24,11 +24,11 @@ export const Light: Story = {
         LightThemeDecorator,
     ],
     render: (args) => (
-        <Dropdown {...args}>
-            <Dropdown.Anchor>
-                <Button>Open Dropdown</Button>
-            </Dropdown.Anchor>
-            <Dropdown.Content>
+        <Tooltip {...args}>
+            <Tooltip.Trigger>
+                <Button theme={ButtonTheme.CLEAR}>Tooltip</Button>
+            </Tooltip.Trigger>
+            <Tooltip.Content>
                 <List>
                     <ListItem>
                         Option 1
@@ -40,8 +40,8 @@ export const Light: Story = {
                         Option 3
                     </ListItem>
                 </List>
-            </Dropdown.Content>
-        </Dropdown>
+            </Tooltip.Content>
+        </Tooltip>
     ),
 };
 
@@ -50,11 +50,11 @@ export const Dark: Story = {
         DarkThemeDecorator,
     ],
     render: (args) => (
-        <Dropdown {...args}>
-            <Dropdown.Anchor>
-                <Button theme={ButtonTheme.PRIMARY}>Open Dropdown</Button>
-            </Dropdown.Anchor>
-            <Dropdown.Content>
+        <Tooltip {...args}>
+            <Tooltip.Trigger>
+                <Button theme={ButtonTheme.CLEAR}>Tooltip</Button>
+            </Tooltip.Trigger>
+            <Tooltip.Content>
                 <List>
                     <ListItem>
                         Option 1
@@ -66,7 +66,7 @@ export const Dark: Story = {
                         Option 3
                     </ListItem>
                 </List>
-            </Dropdown.Content>
-        </Dropdown>
+            </Tooltip.Content>
+        </Tooltip>
     ),
 };
