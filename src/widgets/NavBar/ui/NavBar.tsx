@@ -13,15 +13,15 @@ import { Dropdown } from "shared/ui/Dropdown/Dropdown";
 import { NavBarProps } from "./types";
 import style from "./NavBar.module.scss";
 
-export const NavBar = ({ className }: NavBarProps) => {
+export const NavBar = ({ className, layoutColor }: NavBarProps) => {
     const { t } = useTranslation();
 
     return (
-        <header className={classNames(style.Navbar, {}, [className])} data-testid="navbar">
+        <header className={classNames(style.Navbar, {}, [className, layoutColor])} data-testid="navbar">
             <div className="container">
                 <div className={style.wrapper}>
                     <AppLink to="/" className={style.logo}>
-                        <img src={Logo.default} alt="logo" />
+                        <img src={Logo} alt="logo" />
                     </AppLink>
                     <div className={style.navigation}>
                         <nav className={classNames(style.nav, {}, [className])}>
@@ -53,7 +53,7 @@ export const NavBar = ({ className }: NavBarProps) => {
                                     size={ButtonSize.M}
                                     data-testid="dropdown-toggle"
                                 >
-                                    <img src={Profile.default} alt="profile" />
+                                    <img src={Profile} alt="profile" />
                                 </Button>
                             </Dropdown.Anchor>
                             <Dropdown.Content>

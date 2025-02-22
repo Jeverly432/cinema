@@ -1,6 +1,7 @@
 import webpack from "webpack";
 import { BuildOptions } from "./types/config";
 import { buildCssLoader } from "./loaders/buildCssLoaders";
+import { buildImageLoader } from "./loaders/buildImageLoader";
 
 export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     const { isDev } = options;
@@ -24,14 +25,7 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
         use: ["@svgr/webpack"],
     };
 
-    const fileLoader = {
-        test: /\.(png|jpe?g|gif|webp|woff|woff2)$/i,
-        use: [
-            {
-                loader: "file-loader",
-            },
-        ],
-    };
+    const fileLoader = buildImageLoader();
 
     const babelLoader = {
         test: /\.(js|jsx|tsx)$/,
