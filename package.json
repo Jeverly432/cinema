@@ -13,7 +13,7 @@
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "test:ui": "npx loki --chromeConcurrency 1 test",
     "test:ui:ok": "npx loki approve",
-    "test:ui:ci": "npx run test:ui && kill $!",
+  "test:ui:ci": "npm run storybook:build && npm run storybook & npm run test:ui && kill $!",
     "storybook": "storybook dev -p 6006 --config-dir ./config/storybook",
     "storybook:build": "storybook build --config-dir ./config/storybook"
   },
