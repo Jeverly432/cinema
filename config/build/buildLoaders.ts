@@ -2,6 +2,7 @@ import webpack from "webpack";
 import { BuildOptions } from "./types/config";
 import { buildCssLoader } from "./loaders/buildCssLoaders";
 import { buildImageLoader } from "./loaders/buildImageLoader";
+import { buildFontsLoader } from "./loaders/buildFontsLoader";
 
 export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     const { isDev } = options;
@@ -47,11 +48,14 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
         },
     };
 
+    const fontsLoader = buildFontsLoader();
+
     return [
         svgLoader,
         fileLoader,
         babelLoader,
         typescriptLoader,
         cssLoader,
+        fontsLoader,
     ];
 }
