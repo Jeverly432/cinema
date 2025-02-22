@@ -5,4 +5,4 @@ export const classNames = (cls: string, mods: Mods = {}, additional: (string | u
     ...additional.filter(Boolean),
     ...Object.entries(mods).filter(([_, mode]) => mode)
         .map(([className]) => className),
-].join(' ');
+].join(" ");

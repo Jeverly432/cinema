@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import React, { PropsWithChildren } from 'react';
+import React, { PropsWithChildren } from "react";
 import {
     useFloating,
     autoUpdate,
@@ -14,9 +14,9 @@ import {
     FloatingPortal,
     offset,
     Placement,
-} from '@floating-ui/react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import style from './Dropdown.module.scss';
+} from "@floating-ui/react";
+import { classNames } from "shared/lib/classNames/classNames";
+import style from "./Dropdown.module.scss";
 
 interface DropdownOptions {
     initialOpen?: boolean;
@@ -32,7 +32,7 @@ export function useDropdown({
     initialOpen = false,
     isOpen: controlledOpen,
     onOpenChange: setControlledOpen,
-    placement = 'bottom-end',
+    placement = "bottom-end",
     clickEnabled = true,
 }: DropdownOptions) {
     const [uncontrolledOpen, setUncontrolledOpen] = React.useState(initialOpen);
@@ -48,8 +48,8 @@ export function useDropdown({
     });
 
     const { context } = data;
-    const click = useClick(context, { enabled: clickEnabled, event: 'mousedown' });
-    const role = useRole(context, { role: 'listbox' });
+    const click = useClick(context, { enabled: clickEnabled, event: "mousedown" });
+    const role = useRole(context, { role: "listbox" });
     const dismiss = useDismiss(context);
     const interactions = useInteractions([click, role, dismiss]);
 
@@ -72,7 +72,7 @@ export const useDropdownContext = () => {
     const context = React.useContext(DropdownContext);
 
     if (context == null) {
-        throw new Error('Dropdown components must be wrapped in <Dropdown />');
+        throw new Error("Dropdown components must be wrapped in <Dropdown />");
     }
 
     return context;
@@ -91,7 +91,7 @@ Dropdown.Anchor = React.forwardRef<HTMLElement, React.HTMLProps<HTMLElement>>((
     const childrenRef = (children as any).ref;
     const ref = useMergeRefs([context.refs.setReference, propRef, childrenRef]);
 
-    if (!React.isValidElement(children)) throw new Error('DropdownTrigger must be passed a valid React element');
+    if (!React.isValidElement(children)) throw new Error("DropdownTrigger must be passed a valid React element");
 
     return React.cloneElement(
         children,
@@ -99,7 +99,7 @@ Dropdown.Anchor = React.forwardRef<HTMLElement, React.HTMLProps<HTMLElement>>((
             ref,
             ...props,
             ...children.props,
-            'data-state': context.open ? 'open' : 'closed',
+            "data-state": context.open ? "open" : "closed",
         }),
     );
 });

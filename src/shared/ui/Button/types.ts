@@ -1,14 +1,14 @@
-import { ButtonHTMLAttributes } from 'react';
+import { ButtonHTMLAttributes } from "react";
 
 export enum ButtonTheme {
-    PRIMARY = 'primary',
-    SECONDARY = 'secondary',
-    CLEAR = 'clear'
+    PRIMARY = "primary",
+    SECONDARY = "secondary",
+    CLEAR = "clear"
 }
 
 export enum ButtonSize {
-    M = 'm',
-    L = 'l'
+    M = "m",
+    L = "l"
 }
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {

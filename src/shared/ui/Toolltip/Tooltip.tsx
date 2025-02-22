@@ -1,28 +1,28 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from "shared/lib/classNames/classNames";
 import {
     cloneElement, createContext, forwardRef, HTMLProps, isValidElement, PropsWithChildren, useContext, useState, useEffect,
-} from 'react';
+} from "react";
 import {
     useFloating,
     useMergeRefs,
     useHover,
     useInteractions,
-} from '@floating-ui/react';
-import style from './Tooltip.module.scss';
+} from "@floating-ui/react";
+import style from "./Tooltip.module.scss";
 
 export enum TooltipPlacement {
-    Top = 'top',
-    TopStart = 'top-start',
-    TopEnd = 'top-end',
-    Right = 'right',
-    RightStart = 'right-start',
-    RightEnd = 'right-end',
-    Bottom = 'bottom',
-    BottomStart = 'bottom-start',
-    BottomEnd = 'bottom-end',
-    Left = 'left',
-    LeftStart = 'left-start',
-    LeftEnd = 'left-end'
+    Top = "top",
+    TopStart = "top-start",
+    TopEnd = "top-end",
+    Right = "right",
+    RightStart = "right-start",
+    RightEnd = "right-end",
+    Bottom = "bottom",
+    BottomStart = "bottom-start",
+    BottomEnd = "bottom-end",
+    Left = "left",
+    LeftStart = "left-start",
+    LeftEnd = "left-end"
 }
 
 interface TooltipOptions {
@@ -74,7 +74,7 @@ export const useTooltipContext = () => {
     const context = useContext(TooltipContext);
 
     if (context == null) {
-        throw new Error('Tooltip components must be wrapped in <Tooltip />');
+        throw new Error("Tooltip components must be wrapped in <Tooltip />");
     }
 
     return context;
@@ -92,7 +92,7 @@ Tooltip.Trigger = forwardRef<HTMLElement, HTMLProps<HTMLElement>>(
         const ref = useMergeRefs([context.refs.setReference, propRef, childrenRef]);
 
         if (!isValidElement(children)) {
-            throw new Error('TooltipTrigger must be passed a valid React element');
+            throw new Error("TooltipTrigger must be passed a valid React element");
         }
 
         return cloneElement(
