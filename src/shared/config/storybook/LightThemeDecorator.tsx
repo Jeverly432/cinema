@@ -1,6 +1,5 @@
 import { Theme, useTheme } from "app/providers/ThemeProvider";
 import { ComponentType, useEffect } from "react";
-import { classNames } from "shared/lib/classNames/classNames";
 
 export const LightThemeDecorator = (Story: ComponentType) => {
     const { theme } = useTheme();
@@ -8,7 +7,9 @@ export const LightThemeDecorator = (Story: ComponentType) => {
     useEffect(() => {
         document.documentElement.classList.remove(Theme.DARK);
         document.documentElement.classList.add(Theme.LIGHT);
+        document.body.classList.add("body-centered");
     }, [theme]);
+
     return (
         <div>
             <Story />

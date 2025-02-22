@@ -4,12 +4,14 @@ import { DarkThemeDecorator } from "shared/config/storybook/DarkThemeDecorator";
 import { Button } from "shared/ui/Button/Button";
 import { Dropdown } from "./Dropdown";
 import { ButtonTheme } from "../Button/types";
+import { List } from "../List/List";
+import { ListItem } from "../ListItem/ListItem";
 
 const meta = {
-    title: "widgets/Dropdown",
+    title: "shared/Dropdown",
     component: Dropdown,
-    args: {
-        initialOpen: true,
+    parameters: {
+        layout: "centered",
     },
 } satisfies Meta<typeof Dropdown>;
 
@@ -27,17 +29,17 @@ export const Light: Story = {
                 <Button>Open Dropdown</Button>
             </Dropdown.Anchor>
             <Dropdown.Content>
-                <ul>
-                    <li>
+                <List>
+                    <ListItem>
                         Option 1
-                    </li>
-                    <li>
+                    </ListItem>
+                    <ListItem>
                         Option 2
-                    </li>
-                    <li>
+                    </ListItem>
+                    <ListItem>
                         Option 3
-                    </li>
-                </ul>
+                    </ListItem>
+                </List>
             </Dropdown.Content>
         </Dropdown>
     ),
@@ -53,17 +55,17 @@ export const Dark: Story = {
                 <Button theme={ButtonTheme.PRIMARY}>Open Dropdown</Button>
             </Dropdown.Anchor>
             <Dropdown.Content>
-                <ul>
-                    <li>
+                <List>
+                    <ListItem>
                         Option 1
-                    </li>
-                    <li>
+                    </ListItem>
+                    <ListItem>
                         Option 2
-                    </li>
-                    <li>
+                    </ListItem>
+                    <ListItem>
                         Option 3
-                    </li>
-                </ul>
+                    </ListItem>
+                </List>
             </Dropdown.Content>
         </Dropdown>
     ),
