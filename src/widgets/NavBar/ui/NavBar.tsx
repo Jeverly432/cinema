@@ -25,14 +25,6 @@ export const NavBar = ({ className, layoutColor }: NavBarProps) => {
                         <img src={Logo} alt="logo" />
                     </AppLink>
                     <div className={style.navigation}>
-                        <nav className={classNames(style.nav, {}, [className])}>
-                            <AppLink to={RoutePath.about} className={style.link}>
-                                {t("nav-about-page")}
-                            </AppLink>
-                            <AppLink to={RoutePath.not_found} className={style.link}>
-                                {t("nav-page-catalog")}
-                            </AppLink>
-                        </nav>
                         <Button
                             theme={ButtonTheme.CLEAR}
                             size={ButtonSize.M}
@@ -68,6 +60,14 @@ export const NavBar = ({ className, layoutColor }: NavBarProps) => {
                                 </ul>
                             </Dropdown.Content>
                         </Dropdown>
+                        <nav className={classNames(style.nav, {}, [className])}>
+                            <AppLink to={RoutePath.about} className={style.link}>
+                                {t("nav-about-page")}
+                            </AppLink>
+                            <AppLink to={RoutePath.not_found} className={style.link}>
+                                {t("nav-page-catalog")}
+                            </AppLink>
+                        </nav>
                     </div>
                 </div>
             </div>
