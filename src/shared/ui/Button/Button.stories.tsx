@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { DarkThemeDecorator } from "shared/config/storybook/DarkThemeDecorator";
 import { Button } from "./Button";
-import { ButtonTheme } from "./types";
+import { ButtonSize, ButtonTheme } from "./types";
 
 const meta = {
     title: "shared/Button",
@@ -15,19 +15,21 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const PrimaryL: Story = {
     args: {
         theme: ButtonTheme.PRIMARY,
         children: "Text",
+        size: ButtonSize.L,
     },
     decorators: [
         DarkThemeDecorator,
     ],
 };
 
-export const Secondary: Story = {
+export const SecondaryL: Story = {
     args: {
         theme: ButtonTheme.SECONDARY,
+        size: ButtonSize.L,
         children: "Text",
     },
     decorators: [
@@ -35,9 +37,76 @@ export const Secondary: Story = {
     ],
 };
 
-export const Clear: Story = {
+export const ClearL: Story = {
     args: {
         theme: ButtonTheme.CLEAR,
+        size: ButtonSize.L,
+        children: "Text",
+    },
+    decorators: [
+        DarkThemeDecorator,
+    ],
+};
+
+export const PrimaryM: Story = {
+    args: {
+        theme: ButtonTheme.PRIMARY,
+        size: ButtonSize.M,
+        children: "Text",
+    },
+    decorators: [
+        DarkThemeDecorator,
+    ],
+};
+
+export const SecondaryM: Story = {
+    args: {
+        theme: ButtonTheme.SECONDARY,
+        size: ButtonSize.M,
+        children: "Text",
+    },
+    decorators: [
+        DarkThemeDecorator,
+    ],
+};
+
+export const ClearM: Story = {
+    args: {
+        theme: ButtonTheme.CLEAR,
+        size: ButtonSize.M,
+        children: "Text",
+    },
+    decorators: [
+        DarkThemeDecorator,
+    ],
+};
+
+export const PrimaryS: Story = {
+    args: {
+        theme: ButtonTheme.PRIMARY,
+        size: ButtonSize.S,
+        children: "Text",
+    },
+    decorators: [
+        DarkThemeDecorator,
+    ],
+};
+
+export const SecondaryS: Story = {
+    args: {
+        theme: ButtonTheme.SECONDARY,
+        size: ButtonSize.S,
+        children: "Text",
+    },
+    decorators: [
+        DarkThemeDecorator,
+    ],
+};
+
+export const ClearS: Story = {
+    args: {
+        theme: ButtonTheme.CLEAR,
+        size: ButtonSize.S,
         children: "Text",
     },
     decorators: [

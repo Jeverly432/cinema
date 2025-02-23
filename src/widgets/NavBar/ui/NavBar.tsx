@@ -10,6 +10,7 @@ import Search from "shared/assets/icons/global/search.svg";
 import Notice from "shared/assets/icons/global/notice.svg";
 import Profile from "shared/assets/images/global/profile.png";
 import { Dropdown } from "shared/ui/Dropdown/Dropdown";
+import { RoutePath } from "shared/config/routeConfig/routeConfig";
 import { NavBarProps } from "./types";
 import style from "./NavBar.module.scss";
 
@@ -20,15 +21,15 @@ export const NavBar = ({ className, layoutColor }: NavBarProps) => {
         <header className={classNames(style.Navbar, {}, [className, layoutColor])} data-testid="navbar">
             <div className="container">
                 <div className={style.wrapper}>
-                    <AppLink to="/" className={style.logo}>
+                    <AppLink to={RoutePath.main} className={style.logo}>
                         <img src={Logo} alt="logo" />
                     </AppLink>
                     <div className={style.navigation}>
                         <nav className={classNames(style.nav, {}, [className])}>
-                            <AppLink to="/about" className={style.link}>
+                            <AppLink to={RoutePath.about} className={style.link}>
                                 {t("nav-about-page")}
                             </AppLink>
-                            <AppLink to="/about" className={style.link}>
+                            <AppLink to={RoutePath.not_found} className={style.link}>
                                 {t("nav-page-catalog")}
                             </AppLink>
                         </nav>
