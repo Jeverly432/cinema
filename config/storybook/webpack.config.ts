@@ -1,5 +1,6 @@
 import path from "path";
 import webpack, { RuleSetRule } from "webpack";
+import { buildFontsLoader } from "../build/loaders/buildFontsLoader";
 import { BuildPaths } from "../build/types/config";
 import { buildCssLoader } from "../build/loaders/buildCssLoaders";
 
@@ -35,6 +36,5 @@ export default ({ config }: { config: webpack.Configuration }) => {
     });
 
     config.module?.rules?.push(buildCssLoader(true));
-
     return config;
 };
