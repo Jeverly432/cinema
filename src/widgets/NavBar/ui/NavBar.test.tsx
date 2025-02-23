@@ -1,5 +1,5 @@
 import { fireEvent, screen } from "@testing-library/react";
-import { renderWithTranslation } from "shared/lib/renderWithTranslation/renderWithTranslation";
+import { renderWithTranslation } from "shared/config/tests/renderWithTranslation";
 import { NavBar } from "./NavBar";
 
 describe("navbar", () => {

@@ -40,3 +40,7 @@
         font-family: var(--font-family-main);
     }
 }
+
+.no-scroll {
+    overflow-y: hidden;
+}
