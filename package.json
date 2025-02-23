@@ -106,9 +106,6 @@
         "target": "chrome.docker",
         "preset": "iPhone 7"
       }
-    },
-    "pixelmatch": {
-      "threshold": 0.1
     }
   }
 }
