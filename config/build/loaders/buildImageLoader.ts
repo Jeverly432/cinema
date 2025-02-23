@@ -1,6 +1,6 @@
 export function buildImageLoader() {
     return {
-        test: /\.(png|jpe?g|gif|webp)$/i,
+        test: /\.(png|jpe?g|gif|webp|woff|woff2)$/i,
         use: [
             {
                 loader: "file-loader",
