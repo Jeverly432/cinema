@@ -5,6 +5,7 @@
     border-radius: 8px;
     font-weight: 600;
     user-select: none;
+    font-family: var(--font-family-main);
 }
 
 .primary {
@@ -16,6 +17,8 @@
     &:hover {
         background-color: var(--red-shades-55);
     }
+
+    font-family: var(--font-family-main);
 }
 
 .clear {
@@ -28,6 +31,8 @@
     &:hover {
         color: var(--red-shades-50);
     }
+
+    font-family: var(--font-family-main);
 }
 
 .l {
