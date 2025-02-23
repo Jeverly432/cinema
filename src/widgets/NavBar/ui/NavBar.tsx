@@ -11,11 +11,20 @@ import Notice from "shared/assets/icons/global/notice.svg";
 import Profile from "shared/assets/images/global/profile.png";
 import { Dropdown } from "shared/ui/Dropdown/Dropdown";
 import { RoutePath } from "shared/config/routeConfig/routeConfig";
+import { useCallback, useState } from "react";
+import { Modal } from "shared/ui/Modal/Modal";
+import { ModalSize } from "shared/ui/Modal/types";
 import { NavBarProps } from "./types";
 import style from "./NavBar.module.scss";
 
 export const NavBar = ({ className, layoutColor }: NavBarProps) => {
     const { t } = useTranslation();
+    const [auth, setAuth] = useState(false);
+    const [openAuthModal, setOpenAuthModal] = useState<boolean>(false);
+
+    const handleOpenAuthModal = useCallback(() => {
+        setOpenAuthModal(!openAuthModal);
+    }, [openAuthModal]);
 
     return (
         <header className={classNames(style.Navbar, {}, [className, layoutColor])} data-testid="navbar">
@@ -47,30 +56,42 @@ export const NavBar = ({ className, layoutColor }: NavBarProps) => {
                         >
                             <Notice />
                         </Button>
-                        <Dropdown>
-                            <Dropdown.Anchor>
-                                <Button
-                                    theme={ButtonTheme.CLEAR}
-                                    size={ButtonSize.M}
-                                    data-testid="dropdown-toggle"
-                                >
-                                    <img src={Profile} alt="profile" />
+                        {auth
+                            ? (
+                                <Dropdown>
+                                    <Dropdown.Anchor>
+                                        <Button
+                                            theme={ButtonTheme.CLEAR}
+                                            size={ButtonSize.M}
+                                            data-testid="dropdown-toggle"
+                                        >
+                                            <img src={Profile} alt="profile" />
+                                        </Button>
+                                    </Dropdown.Anchor>
+                                    <Dropdown.Content>
+                                        <ul className={style.list} data-testid="dropdown-list">
+                                            <li>
+                                                <LangSwitcher className={style.lang} />
+                                            </li>
+                                            <li>
+                                                <ThemeSwitcher className={style.theme} />
+                                            </li>
+                                        </ul>
+                                    </Dropdown.Content>
+                                </Dropdown>
+                            )
+                            : (
+                                <Button theme={ButtonTheme.PRIMARY} size={ButtonSize.S} onClick={handleOpenAuthModal}>
+                                    {t("nav-login-button")}
                                 </Button>
-                            </Dropdown.Anchor>
-                            <Dropdown.Content>
-                                <ul className={style.list} data-testid="dropdown-list">
-                                    <li>
-                                        <LangSwitcher className={style.lang} />
-                                    </li>
-                                    <li>
-                                        <ThemeSwitcher className={style.theme} />
-                                    </li>
-                                </ul>
-                            </Dropdown.Content>
-                        </Dropdown>
+                            )}
+
                     </div>
                 </div>
             </div>
+            <Modal open={openAuthModal} setOpen={setOpenAuthModal} size={ModalSize.L}>
+                авторизация
+            </Modal>
         </header>
     );
 };

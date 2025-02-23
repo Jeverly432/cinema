@@ -10,5 +10,6 @@
   "theme-dark": "Темная тема",
   "not-found": "Страница не найдена",
   "page-error": "Произошла непредвиденная ошибка",
-  "page-error-reload-button": "Обновить страницу"
+  "page-error-reload-button": "Обновить страницу",
+  "nav-login-button": "Войти"
 }
