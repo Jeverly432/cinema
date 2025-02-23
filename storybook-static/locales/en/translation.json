@@ -1,0 +1,15 @@
+{
+  "language": "Russian language",
+  "location": "Moscow",
+  "login": "Login",
+  "nav-about-page": "About",
+  "nav-page-catalog": "Catalog",
+  "sidebar-toggle": "Toggle",
+  "sidebar-toggle-open": "Open",
+  "sidebar-toggle-close": "Close",
+  "theme-light": "Light theme",
+  "theme-dark": "Dark theme",
+  "not-found": "Page not found",
+  "page-error": "An unexpected error has occurred",
+  "page-error-reload-button": "Reload page"
+}
