@@ -1,5 +1,6 @@
 import { classNames } from "shared/lib/classNames/classNames";
 import {
+    Fragment,
     useCallback, useEffect, useRef, useState,
 } from "react";
 import style from "./Modal.module.scss";
@@ -14,6 +15,7 @@ export const Modal = ({
     open,
     setOpen,
     size = ModalSize.L,
+    withPortal = true,
 }: ModalProps) => {
     const [isClosing, setIsClosing] = useState<boolean>(false);
     const timerRef = useRef <ReturnType<typeof setTimeout>>();
@@ -50,15 +52,15 @@ export const Modal = ({
         };
     }, [open, onKeyDown]);
 
-    return (
-        <Portal>
-            <div className={classNames(style.Modal, mods, [className, style[size]])}>
-                <div className={style.overview} onClick={closeHandler}>
-                    <div className={style.content} onClick={(e) => e.stopPropagation()}>
-                        {children}
-                    </div>
+    const content = (
+        <div className={classNames(style.Modal, mods, [className, style[size]])}>
+            <div className={style.overview} onClick={closeHandler}>
+                <div className={style.content} onClick={(e) => e.stopPropagation()}>
+                    {children}
                 </div>
             </div>
-        </Portal>
+        </div>
     );
+
+    return withPortal ? <Portal>{content}</Portal> : content;
 };

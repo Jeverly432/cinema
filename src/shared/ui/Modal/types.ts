@@ -11,4 +11,5 @@ export interface ModalProps {
     open:boolean
     setOpen: (open:boolean) => void
     size?: ModalSize
+    withPortal?:boolean
 }

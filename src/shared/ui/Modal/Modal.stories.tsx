@@ -15,6 +15,7 @@ type Story = StoryObj<typeof meta>;
 export const Light: Story = {
     args: {
         children: "Modal",
+        withPortal: false,
         open: true,
         setOpen: () => {},
     },
@@ -27,6 +28,7 @@ export const Dark: Story = {
     args: {
         children: "Modal",
         open: true,
+        withPortal: false,
         setOpen: () => {},
     },
     decorators: [
