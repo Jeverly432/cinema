@@ -7,7 +7,6 @@ const AboutPage = () => {
     return (
         <>
             About Page
-            <Counter />
         </>
     );
 };
