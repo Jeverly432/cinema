@@ -6,6 +6,7 @@ const MainPage = () => (
     <>
         <Banner />
         <Categories />
+        <Counter />
     </>
 );
 
