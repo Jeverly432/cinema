@@ -15,5 +15,14 @@
   "nav-login-button": "Login",
   "nav-page-animation": "Animation",
   "nav-page-genres": "Genres",
-  "nav-subscribe": "Subscribe"
+  "nav-subscribe": "Subscribe",
+  "sidebar-page-discovery": "Discovery",
+  "sidebar-page-top": "Top Rated",
+  "sidebar-page-soon": "Coming Soon",
+  "sidebar-menu": "MENU",
+  "sidebar-library": "LIBRARY",
+  "sidebar-recent": " Recent Played",
+  "sidebar-download": "Download",
+  "sidebar-theme": "Dark Mode",
+  "sidebar-settings": "Settings"
 }

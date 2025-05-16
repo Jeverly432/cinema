@@ -14,5 +14,14 @@
   "nav-login-button": "Войти",
   "nav-page-animation": "Аниме",
   "nav-page-genres": "Жанры",
-  "nav-subscribe": "Подписаться"
+  "nav-subscribe": "Подписаться",
+  "sidebar-page-discovery": "Свежие",
+  "sidebar-page-top": "Топ",
+  "sidebar-page-soon": "Скоро выйдут",
+  "sidebar-menu": "Меню",
+  "sidebar-library": "Библотека",
+  "sidebar-recent": "Просмотренные",
+  "sidebar-download": "Загрузки",
+  "sidebar-theme": "Темная тема",
+  "sidebar-settings": "Настройки"
 }

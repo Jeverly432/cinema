@@ -2,7 +2,7 @@ import "./styles/_index.scss";
 import { classNames } from "shared/lib/classNames/classNames";
 import { NavBar } from "widgets/NavBar";
 import { Suspense, useEffect } from "react";
-import { Sidebar } from "widgets/Sidebar/ui/Sidebar";
+import { Sidebar } from "widgets/Sidebar";
 import { AppRouter } from "./providers/router";
 import { useTheme } from "./providers/ThemeProvider";
 
@@ -21,7 +21,7 @@ const App = () => {
                     <NavBar />
                 </div>
                 <div className="content-wrapper">
-                    <div className="container">
+                    <div className="content-container">
                         <div className="content-inner">
                             <Sidebar />
                             <div className="content-page">

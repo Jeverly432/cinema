@@ -1,0 +1,36 @@
+.BrandSlider {
+    width: 100%;
+    margin-top: 32px;
+}
+
+.slider {
+    width: 100%;
+}
+
+.slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 177px;
+    cursor: pointer;
+}
+
+.brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 12px;
+    padding: 16px;
+    transition: all 0.3s ease;
+    height: 88px;
+    border: 1px solid var(--color-additional-line);
+
+    img {
+        width: 112px;
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+}

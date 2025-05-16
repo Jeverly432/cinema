@@ -1,7 +1,6 @@
 import { classNames } from "shared/lib/classNames/classNames";
 import { AppLink } from "shared/ui/AppLink/AppLink";
 import { ThemeSwitcher } from "widgets/ThemeSwitcher";
-import Logo from "shared/assets/images/global/logo.png";
 import { Button } from "shared/ui/Button/Button";
 import { ButtonSize, ButtonTheme } from "shared/ui/Button/types";
 import { LangSwitcher } from "widgets/LangSwitcher";
@@ -12,15 +11,14 @@ import Login from "shared/assets/icons/global/login.svg";
 import Profile from "shared/assets/images/global/profile.png";
 import { Dropdown } from "shared/ui/Dropdown/Dropdown";
 import { RoutePath } from "shared/config/routeConfig/routeConfig";
-import { useCallback, useState } from "react";
-import { Modal } from "shared/ui/Modal/Modal";
-import { ModalSize } from "shared/ui/Modal/types";
+import { useState } from "react";
+import ArrowDown from "shared/assets/icons/global/arrow-down.svg";
 import { NavBarProps } from "./types";
 import style from "./NavBar.module.scss";
 
 export const NavBar = ({ className, layoutColor }: NavBarProps) => {
     const { t } = useTranslation();
-    const [auth, setAuth] = useState(false);
+    const [auth, setAuth] = useState(true);
     const [notification, setNotification] = useState<number>(3);
 
     return (
@@ -77,19 +75,17 @@ export const NavBar = ({ className, layoutColor }: NavBarProps) => {
                                     <Dropdown.Anchor>
                                         <Button
                                             theme={ButtonTheme.CLEAR}
-                                            size={ButtonSize.M}
+                                            size={ButtonSize.COMPACT}
                                             data-testid="dropdown-toggle"
                                         >
-                                            <img src={Profile} alt="profile" />
+                                            <img src={Profile} alt="profile" className={style.ava} />
+                                            <ArrowDown />
                                         </Button>
                                     </Dropdown.Anchor>
                                     <Dropdown.Content>
                                         <ul className={style.list} data-testid="dropdown-list">
                                             <li>
                                                 <LangSwitcher className={style.lang} />
-                                            </li>
-                                            <li>
-                                                <ThemeSwitcher className={style.theme} />
                                             </li>
                                         </ul>
                                     </Dropdown.Content>

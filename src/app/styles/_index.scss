@@ -13,13 +13,40 @@
     background-color: var(--black-shades-08);
     color: var(--primary-color);
     min-height: 100vh;
+    height: 100vh;
     transition: background-color 0.33s;
+    overflow: hidden;
+}
+
+.content-container {
+    max-width: 1600px;
+    margin: 0 auto;
 }
 
 .content-page {
     width: 100%;
     padding: 32px;
     background-color: var(--color-secondary);
+    height: calc(100vh - 72px);
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        width: 8px;
+        background-color: var(--color-additional-dark);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--color-additional-line);
+        border-radius: 4px;
+
+        &:hover {
+            background-color: var(--color-grayscale-70);
+        }
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: var(--color-additional-dark);
+    }
 }
 
 .content-inner {
