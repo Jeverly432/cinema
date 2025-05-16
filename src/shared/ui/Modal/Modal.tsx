@@ -3,11 +3,10 @@ import {
     Fragment,
     useCallback, useEffect, useRef, useState,
 } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import style from "./Modal.module.scss";
 import { ModalProps, ModalSize } from "./types";
 import { Portal } from "../Portal/Portal";
-
-const ANIMATION_DELAY = 300;
 
 export const Modal = ({
     className,
@@ -17,21 +16,12 @@ export const Modal = ({
     size = ModalSize.L,
     withPortal = true,
 }: ModalProps) => {
-    const [isClosing, setIsClosing] = useState<boolean>(false);
-    const timerRef = useRef <ReturnType<typeof setTimeout>>();
-
     const closeHandler = useCallback(() => {
-        setIsClosing(true);
-
-        timerRef.current = setTimeout(() => {
-            setOpen(!open);
-            setIsClosing(false);
-        }, ANIMATION_DELAY);
-    }, [open, setOpen]);
+        setOpen(false);
+    }, [setOpen]);
 
     const mods: Record<string, boolean | string> = {
         [style.active]: open,
-        [style.isClosing]: isClosing,
     };
 
     const onKeyDown = useCallback((e: KeyboardEvent) => {
@@ -46,20 +36,49 @@ export const Modal = ({
             document.body.classList.add("no-scroll");
         }
         return () => {
-            clearTimeout(timerRef.current);
             document.body.classList.remove("no-scroll");
             window.removeEventListener("keydown", onKeyDown);
         };
     }, [open, onKeyDown]);
 
+    const backdropVariants = {
+        hidden: { opacity: 0 },
+        visible: { opacity: 1 },
+        exit: { opacity: 0 },
+    };
+
+    const modalVariants = {
+        hidden: { opacity: 0, scale: 0.95 },
+        visible: { opacity: 1, scale: 1 },
+        exit: { opacity: 0, scale: 0.95 },
+    };
+
     const content = (
-        <div className={classNames(style.Modal, mods, [className, style[size]])}>
-            <div className={style.overview} onClick={closeHandler}>
-                <div className={style.content} onClick={(e) => e.stopPropagation()}>
-                    {children}
-                </div>
-            </div>
-        </div>
+        <AnimatePresence>
+            {open && (
+                <motion.div
+                    className={classNames(style.Modal, mods, [className, style[size]])}
+                    initial="hidden"
+                    animate="visible"
+                    exit="exit"
+                    variants={backdropVariants}
+                    transition={{ duration: 0.3 }}
+                    onClick={closeHandler}
+                >
+                    <motion.div
+                        className={style.content}
+                        initial="hidden"
+                        animate="visible"
+                        exit="exit"
+                        variants={modalVariants}
+                        transition={{ duration: 0.3 }}
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        {children}
+                    </motion.div>
+                </motion.div>
+            )}
+        </AnimatePresence>
     );
 
     return withPortal ? <Portal>{content}</Portal> : content;

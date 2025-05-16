@@ -2,8 +2,8 @@
   "language": "Russian language",
   "location": "Moscow",
   "login": "Login",
-  "nav-about-page": "About",
-  "nav-page-catalog": "Catalog",
+  "nav-about-page": "Movies",
+  "nav-page-catalog": "Series",
   "sidebar-toggle": "Toggle",
   "sidebar-toggle-open": "Open",
   "sidebar-toggle-close": "Close",
@@ -12,5 +12,8 @@
   "not-found": "Page not found",
   "page-error": "An unexpected error has occurred",
   "page-error-reload-button": "Reload page",
-  "nav-login-button": "Login"
+  "nav-login-button": "Login",
+  "nav-page-animation": "Animation",
+  "nav-page-genres": "Genres",
+  "nav-subscribe": "Subscribe"
 }

@@ -16,9 +16,18 @@
     transition: background-color 0.33s;
 }
 
+.content-page {
+    width: 100%;
+    padding: 32px;
+    background-color: var(--color-secondary);
+}
+
 .content-inner {
-    height: fit-content;
-    flex-grow: 1;
+    display: flex;
+}
+
+.content-wrapper {
+    background-color: var(--color-secondary);
 }
 
 .page-wrapper {

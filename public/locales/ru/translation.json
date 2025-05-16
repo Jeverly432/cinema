@@ -2,8 +2,8 @@
   "language": "Английская язык",
   "location": "Москва",
   "login": "Логин",
-  "nav-about-page": "О нас",
-  "nav-page-catalog": "Каталог",
+  "nav-about-page": "Фильмы",
+  "nav-page-catalog": "Сериалы",
   "sidebar-toggle-open": "Развернуть",
   "sidebar-toggle-close": "Свернуть",
   "theme-light": "Светлая тема",
@@ -11,5 +11,8 @@
   "not-found": "Страница не найдена",
   "page-error": "Произошла непредвиденная ошибка",
   "page-error-reload-button": "Обновить страницу",
-  "nav-login-button": "Войти"
+  "nav-login-button": "Войти",
+  "nav-page-animation": "Аниме",
+  "nav-page-genres": "Жанры",
+  "nav-subscribe": "Подписаться"
 }

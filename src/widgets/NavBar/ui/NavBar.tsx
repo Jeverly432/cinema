@@ -8,6 +8,7 @@ import { LangSwitcher } from "widgets/LangSwitcher";
 import { useTranslation } from "react-i18next";
 import Search from "shared/assets/icons/global/search.svg";
 import Notice from "shared/assets/icons/global/notice.svg";
+import Login from "shared/assets/icons/global/login.svg";
 import Profile from "shared/assets/images/global/profile.png";
 import { Dropdown } from "shared/ui/Dropdown/Dropdown";
 import { RoutePath } from "shared/config/routeConfig/routeConfig";
@@ -20,20 +21,16 @@ import style from "./NavBar.module.scss";
 export const NavBar = ({ className, layoutColor }: NavBarProps) => {
     const { t } = useTranslation();
     const [auth, setAuth] = useState(false);
-    const [openAuthModal, setOpenAuthModal] = useState<boolean>(false);
-
-    const handleOpenAuthModal = useCallback(() => {
-        setOpenAuthModal(!openAuthModal);
-    }, [openAuthModal]);
+    const [notification, setNotification] = useState<number>(3);
 
     return (
         <header className={classNames(style.Navbar, {}, [className, layoutColor])} data-testid="navbar">
             <div className="container">
                 <div className={style.wrapper}>
-                    <AppLink to={RoutePath.main} className={style.logo}>
-                        <img src={Logo} alt="logo" />
-                    </AppLink>
-                    <div className={style.navigation}>
+                    <div className={style.inner}>
+                        <AppLink to={RoutePath.main} className={style.logo}>
+                            CineMax
+                        </AppLink>
                         <nav className={classNames(style.nav, {}, [className])}>
                             <AppLink to={RoutePath.about} className={style.link}>
                                 {t("nav-about-page")}
@@ -41,20 +38,38 @@ export const NavBar = ({ className, layoutColor }: NavBarProps) => {
                             <AppLink to={RoutePath.not_found} className={style.link}>
                                 {t("nav-page-catalog")}
                             </AppLink>
+                            <AppLink to={RoutePath.not_found} className={style.link}>
+                                {t("nav-page-animation")}
+                            </AppLink>
+                            <AppLink to={RoutePath.not_found} className={style.link}>
+                                {t("nav-page-genres")}
+                            </AppLink>
                         </nav>
+                    </div>
+                    <div className={style.navigation}>
                         <Button
                             theme={ButtonTheme.CLEAR}
-                            size={ButtonSize.M}
+                            size={ButtonSize.COMPACT}
                             className={style.search}
                         >
                             <Search />
                         </Button>
                         <Button
+                            theme={ButtonTheme.PRIMARY}
+                            size={ButtonSize.S}
+                            className={style.search}
+                        >
+                            {t("nav-subscribe")}
+                        </Button>
+                        <Button
                             theme={ButtonTheme.CLEAR}
-                            size={ButtonSize.M}
+                            size={ButtonSize.COMPACT}
                             className={style.notice}
                         >
                             <Notice />
+                            <span className={style.notification}>
+                                {notification}
+                            </span>
                         </Button>
                         {auth
                             ? (
@@ -81,17 +96,16 @@ export const NavBar = ({ className, layoutColor }: NavBarProps) => {
                                 </Dropdown>
                             )
                             : (
-                                <Button theme={ButtonTheme.PRIMARY} size={ButtonSize.S} onClick={handleOpenAuthModal}>
-                                    {t("nav-login-button")}
+                                <Button theme={ButtonTheme.CLEAR} size={ButtonSize.COMPACT} className={style.login}>
+                                    <AppLink to="/login">
+                                        <Login />
+                                    </AppLink>
                                 </Button>
                             )}
 
                     </div>
                 </div>
             </div>
-            <Modal open={openAuthModal} setOpen={setOpenAuthModal} size={ModalSize.L}>
-                авторизация
-            </Modal>
         </header>
     );
 };

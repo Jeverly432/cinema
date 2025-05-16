@@ -7,9 +7,11 @@ export enum ButtonTheme {
 }
 
 export enum ButtonSize {
+    XS = "xs",
+    S = "s",
     M = "m",
     L = "l",
-    S = "s"
+    COMPACT = "compact"
 }
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {

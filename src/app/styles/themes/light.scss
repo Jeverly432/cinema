@@ -1,29 +1,21 @@
 html.light,
 .storybook-app.light {
-    --absolute-colors-white: #000;
-    --absolute-colors-black: #fff;
-    --red-shades-45: #ff1919;
-    --red-shades-50: #f33;
-    --red-shades-55: #f99;
-    --red-shades-60: #fcc;
-    --red-shades-80: #ffe5e5;
-    --red-shades-90: #fffafa;
-    --red-shades-95: #fcc;
-    --red-shades-99: #f99;
-    --black-shades-06: #fcfcfd;
-    --black-shades-08: #f7f7f8;
-    --black-shades-10: #f1f1f3;
-    --black-shades-12: #e4e4e7;
-    --black-shades-15: #bfbfbf;
-    --black-shades-20: #b3b3b3;
-    --black-shades-25: #a6a6a6;
-    --black-shades-30: #999;
-    --grey-shades-60: #4c4c4c;
-    --grey-shades-65: #404040;
-    --grey-shades-70: #333;
-    --grey-shades-75: #262626;
-    --grey-shades-90: #1f1f1f;
-    --grey-shades-95: #1a1a1a;
-    --grey-shades-97: #141414;
-    --grey-shades-99: #0f0f0f;
+    --color-primary: #f22;
+    --color-secondary: #fff;
+    --color-alert-success: #25dc37;
+    --color-alert-error: #eb3f5e;
+    --color-alert-warning: #ffcd1a;
+    --color-additional-dark: #1a161f;
+    --color-additional-line: #29282f;
+    --color-additional-line-2: #e9ebed;
+    --color-grayscale-10: #f9f9f9;
+    --color-grayscale-20: #ecf1f6;
+    --color-grayscale-30: #e3e9ed;
+    --color-grayscale-40: #d1d8dd;
+    --color-grayscale-50: #bfc6cc;
+    --color-grayscale-60: #9ca4ab;
+    --color-grayscale-70: #78828a;
+    --color-grayscale-80: #66707a;
+    --color-grayscale-90: #434e58;
+    --color-grayscale-100: #171725;
 }
